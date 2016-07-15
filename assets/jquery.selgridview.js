@@ -97,14 +97,13 @@
                 }
             });     
 
-            return checkedInQuery;
-
             if(!checkedInQuery) {   //if nothing selected in whole grid -> delete "sel" variable from request
                 if(params[selVar]) delete params[selVar];
             } else {                //otherwise set "sel" var to array of selected keys
                 params[selVar] = checkedInQuery;
             }                    
-
+            
+            return checkedInQuery;
         },
         
         clearAllSelection: function() {
@@ -154,8 +153,7 @@
         */
         setUrl: function(url) {
             var id = this.attr('id'),
-                settings = $.fn.yiiGridView.settings[id],
-                ws
+                settings = $.fn.yiiGridView.settings[id];
              if(settings.url) {
                 settings.url = url; 
              } else {
